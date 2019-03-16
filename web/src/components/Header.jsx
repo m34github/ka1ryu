@@ -6,7 +6,7 @@ const Header = () => {
     <>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" color="inherit">Neta/Dash</Typography>
+          <Typography variant="h6" color="inherit">Kairyu</Typography>
         </Toolbar>
       </AppBar>
     </>
