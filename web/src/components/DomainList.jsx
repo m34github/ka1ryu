@@ -5,22 +5,22 @@ import { auth, db } from '../.env/firebase.config.js';
 import Header from './Header.jsx';
 import Loader from './Loader.jsx';
 
-const data = {
-  land: {
-    'alice.bob.cathy': {
-      lat: 123,
-      lng: 456
-    },
-    'clock.time.watch': {
-      lat: 123,
-      lng: -36
-    },
-    'foo.bar.baz': {
-      lat: -127.45,
-      lng: 135
-    }
-  }
-};
+// const data = {
+//   land: {
+//     'alice.bob.cathy': {
+//       lat: 123,
+//       lng: 456
+//     },
+//     'clock.time.watch': {
+//       lat: 123,
+//       lng: -36
+//     },
+//     'foo.bar.baz': {
+//       lat: -127.45,
+//       lng: 135
+//     }
+//   }
+// };
 
 class DomainList extends React.Component {
   constructor(props) {
@@ -99,7 +99,15 @@ class DomainList extends React.Component {
                         display: 'flex',
                         alignItems: 'center'
                       }}
-                      onClick={() => { console.log(domain); }}
+                      onClick={() => {
+                        this.props.history.push({
+                          pathname: '/domain/detail',
+                          search: `?domain=${domain.id}`,
+                          state: {
+                            domain: domain.data()
+                          }
+                        });
+                      }}
                     >
                       <CardContent>
                         <Typography variant="h5">{`/// ${domain.id}`}</Typography>

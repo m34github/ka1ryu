@@ -7,6 +7,7 @@ import SampleA from './components/SampleA.jsx'
 import SampleB from './components/SampleB.jsx'
 import Auth from './components/Auth.jsx'
 import DomainList from './components/DomainList.jsx'
+import DomainDetail from './components/DomainDetail.jsx'
 import { theme } from './style';
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
             <Route path="/sample/B" component={SampleB} />
             <Route path="/auth" component={Auth} />
             <Route path="/domain/list" component={DomainList} />
+            <Route path="/domain/detail" component={DomainDetail} />
             <Redirect to="/auth" />
           </Switch>
         </Router>
