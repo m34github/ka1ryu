@@ -16,4 +16,21 @@ const theme = createMuiTheme({
   }
 });
 
-export { theme };
+const header = {
+  typography: {
+    flex: 1,
+    textAlign: 'center'
+  }
+};
+
+const loader = {
+  circularProgress: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100vw',
+    height: '100vh'
+  }
+};
+
+export { theme, header, loader };

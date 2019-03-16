@@ -1,0 +1,7 @@
+{
+  "appVersion": "0.0.1",
+  "function": {
+      "timeoutSeconds": 300,
+      "memory": "1GB"
+  }
+}

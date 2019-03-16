@@ -5,7 +5,9 @@ import { MuiThemeProvider } from '@material-ui/core';
 
 import SampleA from './components/SampleA.jsx'
 import SampleB from './components/SampleB.jsx'
-import { theme } from './style.js';
+import Auth from './components/Auth.jsx'
+import DomainList from './components/DomainList.jsx'
+import { theme } from './style';
 
 const App = () => {
   return (
@@ -15,7 +17,9 @@ const App = () => {
           <Switch>
             <Route path="/sample/A" component={SampleA} />
             <Route path="/sample/B" component={SampleB} />
-            <Redirect to="/sample/A" />
+            <Route path="/auth" component={Auth} />
+            <Route path="/domain/list" component={DomainList} />
+            <Redirect to="/auth" />
           </Switch>
         </Router>
       </MuiThemeProvider>
