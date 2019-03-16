@@ -10,6 +10,7 @@
     "babel-loader": "^8.0.5",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-google-maps": "^9.4.5",
     "react-router-dom": "^4.4.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
