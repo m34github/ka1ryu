@@ -1,12 +1,22 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Icon, IconButton, Toolbar, Typography } from '@material-ui/core';
+
+import { header } from '../style';
 
 const Header = () => {
   return (
     <>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" color="inherit">Kairyu</Typography>
+          <IconButton color="inherit">
+            <Icon>menu</Icon>
+          </IconButton>
+          <Typography variant="h6" color="inherit" style={header.typography}>
+            AR2
+          </Typography>
+          <IconButton color="inherit">
+            <Icon>person</Icon>
+          </IconButton>
         </Toolbar>
       </AppBar>
     </>
