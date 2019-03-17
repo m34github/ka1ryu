@@ -6,11 +6,11 @@ const theme = createMuiTheme({
   },
   palette: {
     primary: {
-      main: colors.cyan['500'],
+      main: '#00979c',
       contrastText: '#fff'
     },
     secondary: {
-      main: colors.pink['500'],
+      main: '#ffb300',
       contrastText: '#fff'
     }
   }
