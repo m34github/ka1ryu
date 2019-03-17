@@ -17,7 +17,6 @@ const MyMapComponent = compose(
   }),lifecycle({
     componentWillMount() {
       const refs = {}
-      const domain = null
       const latlng = null
 
       this.setState({
@@ -36,19 +35,17 @@ const MyMapComponent = compose(
           })
         },onMapClick: () => {
             const bounds =refs.map.getBounds()
-            console.log(refs.map.getBounds())
             const latitude = bounds.ma.j
             const longitude = bounds.ga.j
             const getDomainUrl = "https://api.what3words.com/v2/reverse?coords="+latitude+"%2C"+longitude+"&key=FWSNV1X2"
-            console.log("緯度" + latitude)
-            console.log("経度" + longitude)
+            console.log("latitude : " + latitude)
+            console.log("longitude : " + longitude)
             axios(getDomainUrl)
             .then((results) => {
-                console.log(results.data.words)
-                domain = results.data.words
+                console.log("domain : " + results.data.words)
               },
               (error) => {
-                console.log("失敗")
+                console.log(error)
               });
         },
         onSearchBoxMounted: ref => {
@@ -134,7 +131,6 @@ class DomainSelect extends React.Component {
           isMarkerShown={this.state.isMarkerShown}
           onMarkerClick={this.handleMarkerClick}
         />
-        <div>{this.domain}</div>
         <Grid container justify="flex-end">
           <Button
             variant="contained"
