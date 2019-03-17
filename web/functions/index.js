@@ -1,5 +1,7 @@
 const funcs = {
   userLandUpdate: './src/firebaseUserLandUpdater',
+  v2: './src/rest',
+  registerUser: './src/registerUser'
 };
 
 const loadFunctions = (funcsObj) => {

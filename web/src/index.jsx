@@ -8,6 +8,7 @@ import SampleB from './components/SampleB.jsx'
 import Auth from './components/Auth.jsx'
 import DomainList from './components/DomainList.jsx'
 import DomainDetail from './components/DomainDetail.jsx'
+import DomainSelect from './components/DomainSelect.jsx'
 import { theme } from './style';
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
             <Route path="/auth" component={Auth} />
             <Route path="/domain/list" component={DomainList} />
             <Route path="/domain/detail" component={DomainDetail} />
+            <Route path="/domain/select" component={DomainSelect} />
             <Redirect to="/auth" />
           </Switch>
         </Router>
