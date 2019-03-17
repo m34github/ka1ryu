@@ -5,7 +5,7 @@ const firebaseInitializer = require('./firebaseInitializer');
 
 const admin = firebaseInitializer.admin;
 const db = firebaseInitializer.db;
-const postsRef = db.collection('land');
+const landRef = db.collection('land');
 
 const app = express();
 
@@ -36,8 +36,23 @@ const options = config.function;
 app.post('/land/domain', async (req, res) => {
   const geodata = req.body;
   console.log(geodata);
-
-  const contensUrl = 'https://firebasestorage.googleapis.com/v0/b/ka1ryu.appspot.com/o/ramen.gltf?alt=media&token=a657b683-5b6c-44c3-81c5-2b2651324e10'
+  const w3w = 'vaital.offers.ladders'
+  let contentData;
+  const contentsRef = await landRef.doc(w3w)
+  await contentsRef.get().then((doc) => {
+    if (doc.exists) {
+      console.log('Document data:', doc.data());
+      contentData = doc.data();
+    } else {
+      // doc.data() will be undefined in this case
+      console.log('No such document!');
+    }
+  }).catch((error) => {
+    console.log('Error getting document:', error);
+    res.status(500).send(error);
+  });
+  const contensUrl = contentData.contents
+  console.log(contensUrl)
   res.status(200).send(contensUrl);
 });
 
