@@ -34,9 +34,7 @@ const authenticate = async (req, res, next) => {
 const options = config.function;
 
 app.post('/land/domain', async (req, res) => {
-  console.log(`userregister method. api version:${config.appVersion}`);
-
-  const geodata = req.body.geodata;
+  const geodata = req.body;
   console.log(geodata);
 
   const contensUrl = 'https://firebasestorage.googleapis.com/v0/b/ka1ryu.appspot.com/o/ramen.gltf?alt=media&token=a657b683-5b6c-44c3-81c5-2b2651324e10'
